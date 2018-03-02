@@ -1,0 +1,444 @@
+/* Base Application Styles */
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {margin: 0; height: 100%; overflow: hidden}
+
+body {
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+}
+
+*:focus {
+  outline: none;
+}
+.index img {
+  margin: 40px auto;
+  border-radius: 4px;
+  background: #fff;
+  display: block;
+}
+
+.columns-wrapper {
+  background: #FFFFFF;
+  display: -webkit-flex;
+   display: flex;
+   -webkit-flex-direction: row;
+   flex-direction: row;
+  flex-direction: row;
+  border-top: 1px solid #DDDDDD;
+  height: 100vh;
+  min-width: 100%;
+  width: 100%;
+}
+
+.column {
+  height: calc(100vh - 89px)!important;
+  border-right: 1px solid #DDDDDD;
+  overflow-x: hidden;
+}
+
+
+.listItem {
+  font-size: 14px;
+  line-height: 26px;
+  color: #171717;
+  height: 36px;
+  width: 100%;
+  overflow-x: hidden;
+  line-height: 36px;
+  padding: 0 20px;
+  padding-left: 40px;
+  margin-right: -1px;
+  border-right: 1px solid transparant;
+  position: relative;
+}
+
+.listItem div{
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+.listItem:before {
+  content: '';
+  background-image: url('../images/icon-symbol.png');
+  background-repeat: no-repeat;
+  height: 16px;
+  width: 16px;
+  left: 16px;
+  top: 10px;
+  position: absolute;
+}
+
+.listItem--folder {
+  background-image: url('../images/arrow-right-grey.png');
+  background-repeat: no-repeat;
+  background-position: right 20px center;
+}
+
+.listItem--folder.listItem--selected {
+  background-image: url('../images/arrow-right-white.png');
+}
+
+.listItem--folder.listItem--selected-inherit {
+  background-color: #EDEDEE;
+}
+
+.listItem--folder::before {
+  background-image: url('../images/icon-folder.png');
+}
+
+input.listItem__input {
+  width: 128px;
+  border: 1px solid #fff;
+  border-radius: 2px;
+}
+
+
+@media all and (-webkit-min-device-pixel-ratio : 1.5),
+ all and (-o-min-device-pixel-ratio: 3/2),
+ all and (min--moz-device-pixel-ratio: 1.5),
+ all and (min-device-pixel-ratio: 1.5) {
+
+   .listItem:before {
+     background-image: url('../images/icon-symbol@2x.png');
+     background-size: 16px;
+   }
+
+   .listItem--folder {
+     background-image: url('../images/arrow-right-grey@2x.png');
+     background-size: 5px 8px;
+   }
+
+   .listItem--folder.listItem--selected{
+     background-image: url('../images/arrow-right-white@2x.png');
+   }
+
+   .listItem--folder::before{
+     background-image: url('../images/icon-folder@2x.png');
+     background-size: 16px;
+   }
+}
+
+.listItem--selected {
+  background-color: #5098FB;
+  color: #fff;
+  border-right: 1px solid #4890f3;
+}
+
+.listItem--drag-over {
+  background-color: #5098FB;
+  color: #fff;
+  border-right: 1px solid #4890f3;
+}
+
+/**
+ * Button
+ */
+.button {
+  display: inline-block;
+  height: 30px;
+  padding-left: 16px;
+  padding-right: 16px;
+  line-height: 30px;
+  color: #FFF;
+  background: #5098FB;
+  font-size: 14px;
+  font-weight: 500;
+  box-shadow: inset 0 0 0 1px  #4890F3;
+  border-radius: 3px;
+  margin-left: 5px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #61A2FB;
+}
+
+.button--grey {
+  color: #8E8E8E;
+  background: #FFF;
+  box-shadow: inset 0 0 0 1px #E0E0E0;
+}
+
+.button--grey:hover {
+  color: #B7B7B7;
+  background: #FFF;
+  box-shadow: inset 0 0 0 1px #E6E6E6;
+}
+
+.button--small{
+  font-size: 12px;
+  height: 22px;
+  line-height: 22px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.button--grey-clean {
+  color: #8E8E8E;
+  background: none;
+  box-shadow: none;
+  padding: 0;
+}
+
+.button--grey-clean:hover {
+  color: #5098FB;
+  background: none;
+  box-shadow: none;
+}
+
+.button--disabled,
+.button--disabled:hover {
+  cursor: default;
+  opacity: .4;
+  color: #8E8E8E;
+  background: none;
+  box-shadow: inset 0 0 0 1px #E0E0E0;
+}
+
+/**
+ * Footer
+ */
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #F7F7F7;
+  border-top: 1px solid #DDD;
+  text-align: right;
+  padding: 10px 11px;
+}
+
+.footer__actions {
+  display: inline-block;
+  float: right;
+}
+
+.footer__credits {
+  display: inline-block;
+  float: left;
+}
+
+.link--github {
+  color: #8E8E8E;
+  text-decoration: none;
+}
+
+.link--github::before {
+  background-image: url('../images/icon-github.png');
+  background-repeat: no-repeat;
+  height: 16px;
+  width: 16px;
+  left: 16px;
+  top: 10px;
+  position: absolute;
+}
+
+/**
+ * nodeDetail column
+ */
+.column--nodeDetail{
+  font-size: 14px;;
+  padding: 16px;
+  text-align: center;
+}
+
+
+
+.nodeDetail__previewImage-wrapper img{
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 16px;
+}
+
+
+/**
+ * Toolbar
+ */
+.toolbar {
+  text-align: right;
+  padding: 9px 11px 8px 11px;
+}
+
+
+/**
+ * Empty state
+ */
+ .empty-state {
+  background: #FFFFFF;
+  border-top: 1px solid #DDD;
+  width: 100%;
+  height: 410px;
+  padding: 0;
+  margin: 0;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ }
+
+.empty-state__content {
+  font-size: 14px;
+  text-align: center;
+}
+
+.license {
+  height: 350px;
+  background-image: -webkit-linear-gradient(#4189ED 0%, #5098FB 100%);
+  background-image: -o-linear-gradient(#4189ED 0%, #5098FB 100%);
+  background-image: linear-gradient(#4189ED 0%, #5098FB 100%);
+  padding: 0;
+  margin: 0;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.license__content {
+  font-size: 14px;
+  text-align: center;
+}
+
+.license__footer {
+  text-align: center;
+  font-size: 14px;
+  padding: 20px;
+  background: #5098FB;
+  color: #D3E6FF;
+  border-top: 1px solid #4B90ED;
+}
+
+.license__logo {
+  width: 154px;
+  display: block;
+  margin: 0 auto 16px auto;
+}
+
+.license__input {
+  height: 40px;
+  border: none;
+  color: #fff;
+  width: 326px;
+  background: #3879D4;
+  border-radius: 3px;
+  padding-left: 16px;
+  margin-top: 16px;
+  font-family: monospace;
+}
+
+.license__link {
+  color: #FFF;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+
+.button--license {
+  background: #FFFFFF;
+  box-shadow: 0 1px 2px 0 rgba(6,26,53,0.22), 0 4px 9px 0 rgba(0,0,0,0.10);
+  border-radius: 3px;
+  height: 40px;
+  line-height: 40px;
+  color: #4786DC;
+  margin-left: 8px;
+}
+
+.button--license:hover {
+  color: #4786DC;
+  background-color: #F7F7F7;
+}
+
+
+.toast-wrapper {
+  position: fixed;
+  bottom: 64px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  pointer-events: none;
+}
+
+.toast{
+  background-color: #F7F7F7;
+  border: 1px solid rgba(0,0,0,0.10);
+  box-shadow: 0 8px 12px 0 rgba(0,0,0,0.09);
+  border-radius: 4px;
+  padding: 8px 12px 8px 32px;
+  font-size: 13px;
+  display: inline-block;
+  min-height: 32px;
+}
+
+.toast--error {
+  background-image: url('../images/icon-warning.png');
+  background-size: 16px;
+  background-position: left 8px center;
+  background-repeat: no-repeat;
+}
+
+@media all and (-webkit-min-device-pixel-ratio : 1.5),
+ all and (-o-min-device-pixel-ratio: 3/2),
+ all and (min--moz-device-pixel-ratio: 1.5),
+ all and (min-device-pixel-ratio: 1.5) {
+   .toast--error {
+     background-image: url('../images/icon-warning@2x.png');
+   }
+ }
+
+
+/**
+ * Error
+ */
+
+.error {
+  font-size: 14px;
+  text-align: center;
+  background: #FB4646;
+  border-radius: 4px;
+  padding: 8px 16px;
+  color: #FFF;
+  display: inline-block;
+  margin: 16px auto 0 auto;
+}
+
+
+/**
+ * Drag and Drop
+ */
+.gu-mirror {
+  position: fixed !important;
+  margin: 0 !important;
+  z-index: 9999 !important;
+  opacity: 0.8;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+  filter: alpha(opacity=80);
+}
+.gu-hide {
+  display: none !important;
+}
+.gu-unselectable {
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+}
+.gu-transit {
+  opacity: 0.2;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
+  filter: alpha(opacity=20);
+}

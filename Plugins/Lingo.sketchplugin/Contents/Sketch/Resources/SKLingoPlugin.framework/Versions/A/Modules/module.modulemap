@@ -1,0 +1,6 @@
+framework module SKLingoPlugin {
+  umbrella header "SKLingoPlugin.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Symbols Manager",
+  "description": "Easiest way to manage your symbols.",
+  "author": "Jaer Pollux",
+  "version": "2.0.0",
+  "compatibleVersion": 3,
+  "bundleVersion": 1,
+  "appcast": "https://s3.us-east-2.amazonaws.com/symbols-manager/appcast.xml",
+  "commands": [
+    {
+      "name": "Manager",
+      "identifier": "sketch-symbols-manager",
+      "script": "manager.js",
+      "shortcut": "shift cmd m"
+    }
+  ],
+  "menu": {
+    "title": "Symbols Manager",
+    "items": [
+      "sketch-symbols-manager"
+    ]
+  },
+  "disableCocoaScriptPreprocessor": true
+}

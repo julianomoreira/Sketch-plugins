@@ -1,0 +1,54 @@
+{
+    "name" : "Lingo",
+    "identifier" : "com.lingoapp.sketch",
+    "version" : "1.0",
+    "bundleVersion" : "64",
+    "description" : "A design system manager for Sketch.",
+    "authorEmail" : "info@lingoapp.com",
+    "author" : "Lingo",
+    "commands" : [
+        {
+            "script" : "script.js",
+            "handler" : "lingo_openToolbarForCurrentDocument",
+            "shortcut" : "ctrl command l",
+            "name" : "Lingo",
+            "identifier" : "com.lingoapp.open"
+        },
+        {
+            "script" : "script.js",
+            "handler" : "lingo_push",
+            "shortcut" : "ctrl command ↑",
+            "name" : "↑ Push",
+            "identifier" : "com.lingoapp.push"
+        },
+        {
+            "script" : "script.js",
+            "handler" : "lingo_pull",
+            "shortcut" : "ctrl command ↓",
+            "name" : "↓ Pull",
+            "identifier" : "com.lingoapp.pull"
+        },
+        {
+            "script": "script.js",
+            "handlers": {
+                "actions": {
+                    "Startup" : "lingo_onLaunch",
+                    "Paste" : "lingo_willPaste",
+                    "Copy.finish" : "lingo_didCopy",
+                    "SelectionChanged.finish" : "lingo_selectionChanged"
+                }
+            }
+        }
+    ],
+    "menu" : {
+        "isRoot": false,
+        "title" : "Lingo",
+        "items": [
+            "com.lingoapp.open",
+            "-",
+            "com.lingoapp.push",
+            "com.lingoapp.pull"
+        ]
+
+    }
+}
